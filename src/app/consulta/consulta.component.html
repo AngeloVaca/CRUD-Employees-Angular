@@ -25,7 +25,7 @@
                         <td>{{empleado.telefono}}</td>
                         <td>
                             <span class="edit" routerLink="/edicion/{{empleado.id}}">Editar</span>
-                            <span class="delete">Eliminar</span>
+                            <span class="delete" (click)="deleteEmpleado(empleado.id)">Eliminar</span>
                         </td>
                     </tr>
                 </tbody>

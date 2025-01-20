@@ -23,4 +23,13 @@ export class ConsultaComponent implements OnInit {
       this.empleados = data;
     })
   }
+
+  // Borrar un empleado
+  deleteEmpleado(id: any) {
+    if (window.confirm('Está seguro que desea eliminar el dato?')) {
+      this.restApi.deleteEmpleado(id).subscribe(data => {
+        this.getEmpleados()
+      })
+    }
+  }
 }

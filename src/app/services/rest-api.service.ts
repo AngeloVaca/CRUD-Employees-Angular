@@ -38,4 +38,39 @@ export class RestApiService {
         catchError(this.handleError)
       )
   }
+
+  // HttpClient API delete() method => delete empleado
+  deleteEmpleado(id: any) {
+    return this.http.delete<Empleado>(this.apiURL + '/empleados/' + id, this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  // HttpClient API post() method => Crear empleado
+  createEmpleado(empleado: any): Observable<Empleado> {
+    return this.http.post<Empleado>(this.apiURL + '/empleados', JSON.stringify(empleado), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+
+
+  // HttpClient API get() method => Consulta un empleado
+  getEmpleado(id: string): Observable<Empleado> {
+    return this.http.get<Empleado>(this.apiURL + '/empleados/' + id)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
+  // HttpClient API put() method => Actualiza un empleado
+  updateEmpleado(id: string, empleado: any): Observable<Empleado> {
+    return this.http.put<Empleado>(this.apiURL + '/empleados/' + id, JSON.stringify(empleado), this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError)
+      )
+  }
 }

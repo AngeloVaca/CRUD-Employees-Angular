@@ -1,0 +1,23 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <form [formGroup]="empleadoForm" (ngSubmit)="createEmpleado()">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" type="text" formControlName="nombre" required />
+            </div>
+            <div class="form-group">
+                <label>Correo</label>
+                <input class="form-control" type="email" formControlName="correo" required />
+            </div>
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input class="form-control" type="text" formControlName="telefono" required />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit">
+                    Crear empleado
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
