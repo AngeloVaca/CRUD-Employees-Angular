@@ -1,0 +1,16 @@
+{
+    "empleados": [
+        {
+        "id": 1,
+        "nombre": "Antonio Estevez",
+        "correo": "tony@json.com",
+        "telefono": "001-123-4567"
+        },
+        {
+        "id": 2,
+        "nombre": "Blanca Salazar",
+        "correo": "bsalazar@json.com",
+        "telefono": "001-123-4568"
+        }
+    ]
+}

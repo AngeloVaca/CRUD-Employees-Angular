@@ -1,0 +1,35 @@
+<div class="container custom-container-2">
+    <!-- Se muestra cuando no existen empleados -->
+    <div class="no-data text-center">
+        <button class="btn btn-outline-primary" routerLink="/creacion">Crear empleado</button>
+    </div>
+    <!-- Tabla de empleados, se oculta cuando no existen registros -->
+    <div *ngIf="empleados.length !== 0">
+        <h3 class="mb-3 text-center">Lista de empleados</h3>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id empleado</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of empleados">
+                        <td>{{empleado.id}}</td>
+                        <td>{{empleado.nombre}}</td>
+                        <td>{{empleado.correo}}</td>
+                        <td>{{empleado.telefono}}</td>
+                        <td>
+                            <span class="edit" routerLink="/edicion/{{empleado.id}}">Editar</span>
+                            <span class="delete">Eliminar</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
